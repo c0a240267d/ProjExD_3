@@ -142,7 +142,7 @@ class Bomb:
 
 class Score:
     def __init__(self):
-        self.fonto = pg.font.SysFont("創英角ポップ体", 30)
+        self.fonto = pg.font.SysFont("創英角ポップ体", 30)  # 書体
         self.score = 0
         self.img = self.fonto.render("score" + str(self.score), 0, (0, 0, 255))
         self.rct = self.img.get_rect()
@@ -179,6 +179,7 @@ def main():
                 # スペースキー押下でBeamクラスのインスタンス生成
                 beam = Beam(bird)            
         screen.blit(bg_img, [0, 0])
+
         
         #if bomb is not None:
         for bomb in bombs:
@@ -192,7 +193,7 @@ def main():
                 time.sleep(1)
                 return
             
-            #if bomb is not None:
+            #  if bomb is not None:
         for j, bomb in enumerate(bombs):
             if beam is not None:
                 if beam.rct.colliderect(bomb.rct):  # ビームとボムの衝突判定
